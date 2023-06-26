@@ -5,6 +5,12 @@ const Todo = require("./models/Todo");
 require("dotenv").config();
 
 const app = express();
+app.use(
+  cors({
+    methods: ["POST", "GET", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(cors());
